@@ -8,7 +8,7 @@ void SortingAlgorithms::printList(int array[], size_t n)
 	{
 		std::cout << array[i] << ", ";
 	}
-	std::cout << array[n - 1] << "}";
+	std::cout << array[n - 1] << "}" << std::endl;
 }
 
 
@@ -26,6 +26,35 @@ void SortingAlgorithms::insertionSort(int array[], size_t n)
 		for (size_t j = i; array[j] < array[j - 1]; j--)
 		{
 			swap(array[j], array[j - 1]);
+		}
+	}
+	printList(array, n);
+}
+
+void SortingAlgorithms::SelectionSort(int array[], size_t n)
+{
+	int minIndex = 0;
+	for (int i = 0; i < n; i++)
+	{
+		minIndex = i;
+		for (int j = i; j < n; j++)
+		{
+			if (array[minIndex] > array[j])
+				minIndex = j;
+		}
+		swap(array[i], array[minIndex]);
+	}
+	printList(array, n);
+}
+
+void SortingAlgorithms::BubbleSort(int array[], size_t n)
+{
+	for (size_t i = 0; i < n; i++)
+	{
+		for (size_t j = 0; j < n - 1; j++)
+		{
+			if (array[j] > array[j + 1])
+				swap(array[j], array[j + 1]);
 		}
 	}
 	printList(array, n);
