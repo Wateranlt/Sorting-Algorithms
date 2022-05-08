@@ -3,7 +3,8 @@
 
 int main(int args, char** argv)
 {
-	int array1[10] = {3,9,6,1,8,7,2,5,4,10};
-	SortingAlgorithms::BubbleSort(array1, 10);
+	int *array1 = SortingAlgorithms::randomGenerator(10);
+	SortingAlgorithms::QuickSort(array1,0,10);
+	SortingAlgorithms::printList(array1, 10);
 	return 0;
 }
