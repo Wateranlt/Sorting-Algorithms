@@ -137,7 +137,6 @@ void SortingAlgorithms::countingSort(int array[], size_t n, int digit)
 void SortingAlgorithms::radixSort(int array[], size_t n)
 {
 	int max = *(std::max_element(array, array + n)), maxDivision = 0;
-	std::cout << max;
 	for (maxDivision = 1; max % (int)std::pow(10, maxDivision) != max; maxDivision++);
 	for (size_t i = 1; i <= maxDivision; i++)
 		countingSort(array, n, i);
