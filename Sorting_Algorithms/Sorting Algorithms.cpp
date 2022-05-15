@@ -6,7 +6,7 @@
 void SortingAlgorithms::printList(int array[], size_t n)
 {
 	std::cout << "{";
-	for (auto i = 0; i < n - 1; i++)
+	for (size_t i = 0; i < (n - 1); i++)
 	{
 		std::cout << array[i] << ", ";
 	}
@@ -24,7 +24,7 @@ void SortingAlgorithms::swap(int* var1, int* var2)
 int* SortingAlgorithms::randomGenerator(size_t n)
 {
 	srand(time(0));
-	int* resultArray = new int[10];
+	int* resultArray = new int[n];
 	for (size_t i = 0; i < n; i++)
 	{
 		resultArray[i] = rand() % 100;
@@ -63,7 +63,7 @@ void SortingAlgorithms::bubbleSort(int array[], size_t n)
 {
 	for (size_t i = 0; i < n; i++)
 	{
-		for (size_t j = 0; j < n; j++)
+		for (size_t j = 0; j < n - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 				swap(array + j, array + j + 1);
@@ -141,3 +141,47 @@ void SortingAlgorithms::radixSort(int array[], size_t n)
 	for (size_t i = 1; i <= maxDivision; i++)
 		countingSort(array, n, i);
 }
+
+void SortingAlgorithms::cocktailShakerSort(int array[], size_t n)
+{
+	bool swapped = false;
+	do
+	{
+		swapped = false;
+		for (size_t j = 0; j < n - 1; j++)
+		{
+			if (array[j] > array[j + 1])
+			{
+				swap(array + j, array + j + 1);
+				swapped = true;
+			}
+		}
+
+		for (size_t u = n - 2; u > -1; u--)
+		{
+			if (array[u + 1] < array[u])
+			{
+				swap(array + u, array + u + 1);
+				swapped = true;
+			}
+		}
+	} while (swapped);
+}
+
+void SortingAlgorithms::gnomeSort(int array[], size_t n)
+{
+	int i = 0;
+	do
+	{
+		if (i == 0)
+			i++;
+		if (array[i - 1] < array[i + 1])
+			i++;
+		else
+		{
+			swap(array + i - 1, array + i + 1);
+			i--;
+		}
+	} while (i != n - 1);
+}
+

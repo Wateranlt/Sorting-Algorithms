@@ -18,13 +18,12 @@ public:
 	static void shellSort(int array[], size_t n);
 	static void countingSort(int array[], size_t n, int digit);
 	static void radixSort(int array[], size_t n);
+	static void cocktailShakerSort(int array[], size_t n);
+	static void gnomeSort(int array[], size_t n);
+	//Bitonic sort
 	//Heap Sort
 	//mergeSort
-	//Cocktail Shaker Sort
-	//Gnome Sort
-	//Bitonic Sort
 	//Bogo Sort
-private:
 };
 
 #endif // !1
