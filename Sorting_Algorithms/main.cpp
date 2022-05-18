@@ -1,13 +1,12 @@
 #include <iostream>
 #include "Sorting Algorithms.h"
 #include "Visualizer.h"
-#define LENGTH 15
 
 int main(int args, char** argv)
 {
-	int *array1 = SortingAlgorithms::randomGenerator(LENGTH);
-	SortingAlgorithms::printList(array1, LENGTH);
-	SortingAlgorithms::cocktailShakerSort(array1, LENGTH);
-	SortingAlgorithms::printList(array1, LENGTH);
+	Visualizer wind;
+	int* array1 = SortingAlgorithms::randomGenerator(LENGTH);
+	wind.setup(array1, LENGTH);
+	wind.visualize(Visualizer::ALGO::INSERT);
 	return 0;
 }

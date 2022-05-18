@@ -2,7 +2,7 @@
 #ifndef SORTALGO_H_DEFINED
 #define SORTALGO_H_DEFINED
 
-#include <stdlib.h>
+#define LENGTH 50
 
 class SortingAlgorithms
 {

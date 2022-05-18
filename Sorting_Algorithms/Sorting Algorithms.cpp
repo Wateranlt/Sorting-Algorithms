@@ -24,11 +24,13 @@ void SortingAlgorithms::swap(int* var1, int* var2)
 int* SortingAlgorithms::randomGenerator(size_t n)
 {
 	srand(time(0));
+	
 	int* resultArray = new int[n];
 	for (size_t i = 0; i < n; i++)
 	{
-		resultArray[i] = rand() % 100;
+		resultArray[i] = i + 1;
 	}
+	std::random_shuffle(&resultArray[0], &resultArray[n - 1]);
 	return resultArray;
 }
 
