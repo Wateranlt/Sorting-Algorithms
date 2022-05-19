@@ -65,7 +65,7 @@ void SortingAlgorithms::bubbleSort(int array[], size_t n)
 {
 	for (size_t i = 0; i < n; i++)
 	{
-		for (size_t j = 0; j < n - 1; j++)
+		for (size_t j = 0; j < n - i - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 				swap(array + j, array + j + 1);
@@ -159,7 +159,7 @@ void SortingAlgorithms::cocktailShakerSort(int array[], size_t n)
 			}
 		}
 
-		for (size_t u = n - 2; u > -1; u--)
+		for (int u = n - 2; u != -1; u--) // using int since we cannot compare a size_t with a negative number
 		{
 			if (array[u + 1] < array[u])
 			{
@@ -177,11 +177,11 @@ void SortingAlgorithms::gnomeSort(int array[], size_t n)
 	{
 		if (i == 0)
 			i++;
-		if (array[i - 1] < array[i + 1])
+		if (array[i] < array[i + 1])
 			i++;
 		else
 		{
-			swap(array + i - 1, array + i + 1);
+			swap(array + i, array + i + 1);
 			i--;
 		}
 	} while (i != n - 1);

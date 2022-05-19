@@ -16,25 +16,30 @@ enum class ALGO
 	BUBBLE = 2,
 	QUICKSORT = 3,
 	SHELL = 4,
-	COUNTING = 5,
-	RADIX = 6,
-	COCKTAIL = 7,
-	GNOME = 8,
-	HEAP = 9,
-	BITONIC = 10,
-	MERGE = 11,
-	BOGO = 12
+	RADIX = 5,
+	COCKTAIL = 6,
+	GNOME = 7,
+	HEAP = 8,
+	BITONIC = 9,
+	MERGE = 10,
+	BOGO = 11
 };
 	void setup(int array[], size_t n);
-	void visualize(ALGO);
+	void visualize(ALGO algo);
 	void insertionSort();
 	void selectionSort();
+	void bubbleSort();
+	void cokctailShakerSort();
+	//void shellSort();
+	void gnomeSort();
+	void quickSort(int low, int n);
+	void radixSort();
 private:
 	sf::RenderWindow* window;
-	sf::Event ev;
 	int* array;
 	size_t n;
-	void render(size_t currentPos, size_t k);
+	void countingSort(int digit);
+	void render(size_t currentPos, size_t k = 0);
 
 
 };
