@@ -37,6 +37,9 @@ void Visualizer::visualize(Visualizer::ALGO algo)
 		window->close();
 		break;
 	case Visualizer::ALGO::SHELL:
+		shellSort();
+		sf::sleep(sf::seconds(2));
+		window->close();
 		break;
 	case Visualizer::ALGO::RADIX:
 		radixSort();
@@ -172,26 +175,24 @@ void Visualizer::cokctailShakerSort()
 		}
 	} while (swapped);
 }
-/*
+
 void Visualizer::shellSort()
 {
-	for (size_t i = n / 2; i > 0; i /= 2)
+	for (int i = n / 2; i > 0; i /= 2)
 	{
 		for (size_t j = i; j < n; j++)
 		{
-			for (size_t k = j; array[k] < array[k - i] && k - i > 0; k -= i)
+			for (int k = j; array[k] < array[k - i] && k - i >= 0; k -= i)
 			{
 				window->clear();
 				SortingAlgorithms::swap(array + k, array + k - i); // Moving number while it is possible 
-				render(j, k); //TODO : Improve render function for earch sorting function
+				render(k, k - i); //TODO : Improve render function for earch sorting function
 				window->display();
 				sf::sleep(sf::milliseconds(50));
 			}
 		}
 	}
-	sf::sleep(sf::seconds(2));
-	window->close();
-}*/
+}
 
 void Visualizer::gnomeSort()
 {

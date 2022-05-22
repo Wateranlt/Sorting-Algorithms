@@ -30,7 +30,7 @@ enum class ALGO
 	void selectionSort();
 	void bubbleSort();
 	void cokctailShakerSort();
-	//void shellSort();
+	void shellSort();
 	void gnomeSort();
 	void quickSort(int low, int n);
 	void radixSort();

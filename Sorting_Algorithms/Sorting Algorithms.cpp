@@ -94,11 +94,11 @@ void SortingAlgorithms::quickSort(int array[], int low, int n)
 
 void SortingAlgorithms::shellSort(int array[], size_t n)
 {
-	for (size_t i = n / 2; i > 0; i /= 2)
+	for (int i = n / 2; i > 0; i /= 2)
 	{
 		for (size_t j = i; j < n; j++)
 		{
-			for (size_t k = j; array[k] < array[k - i] && k - i > 0; k -= i)
+			for (int k = j; array[k] < array[k - i] && k - i >= 0; k -= i)
 			{
 				swap(array + k, array + k - i); // Moving number while it is possible 
 			}
