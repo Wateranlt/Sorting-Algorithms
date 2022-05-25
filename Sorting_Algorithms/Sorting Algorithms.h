@@ -2,7 +2,7 @@
 #ifndef SORTALGO_H_DEFINED
 #define SORTALGO_H_DEFINED
 
-#define LENGTH 50
+#define LENGTH 10
 
 class SortingAlgorithms
 {
@@ -20,10 +20,12 @@ public:
 	static void radixSort(int array[], size_t n);
 	static void cocktailShakerSort(int array[], size_t n);
 	static void gnomeSort(int array[], size_t n);
+	static void heapSort(int array[], size_t n);
 	//Bitonic sort
-	//Heap Sort
 	//mergeSort
 	//Bogo Sort
+private:
+	static void heapify(int array[], size_t node, size_t n);
 };
 
 #endif // !1

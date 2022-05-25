@@ -187,3 +187,34 @@ void SortingAlgorithms::gnomeSort(int array[], size_t n)
 	} while (i != n - 1);
 }
 
+
+void SortingAlgorithms::heapSort(int array[], size_t n)
+{
+	for (int i = n / 2; i > -1; i--)
+		heapify(array, i, n);
+	for (int i = n - 1; i > -1; i--)
+	{
+		heapify(array, 0, i);
+		swap(&array[0], &array[i]);
+		printList(array, n);
+	}
+}
+
+void SortingAlgorithms::heapify(int array[], size_t node, size_t n)
+{
+	if (2 * node + 2 > n || 2 * node + 1 > n)
+		return;
+	else
+	{
+		if (array[node] < array[2 * node + 1])
+		{
+			swap(&array[node], &array[2 * node + 1]);
+		}
+		if (array[node] < array[2 * node + 2])
+		{
+			swap(&array[node], &array[2 * node + 2]);
+		}
+		heapify(array, 2 * node + 1, n);
+		heapify(array, 2 * node + 2, n);
+	}
+}
